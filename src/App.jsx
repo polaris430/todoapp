@@ -5,7 +5,7 @@ import ToDoList from "./components/ToDoList";
 
 export default function App() {
   const [inputText, setInputText] = useState(""); //holding input txt
-  const [todoItems, setToDoItems] = useState([]);
+  const [todoItems, setToDoItems] = useState([]); //holding todos
   const [status, setStatus] = useState("all");
   const [filtereditems, setFilteredItems] = useState([]);
 
@@ -26,29 +26,29 @@ export default function App() {
 
   //useEffect
 
-  useEffect(() => {
-    getLocalToDo();
-  }, []);
+  // useEffect(() => {
+  //   getLocalToDo();
+  // }, []);
 
   useEffect(() => {
     filterHandler();
-    saveLocal();
+    // saveLocal();
   }, [todoItems, status]);
 
   //save to local
 
-  const saveLocal = () => {
-    localStorage.setItem("todoItems", JSON.stringify(todoItems));
-  };
+  // const saveLocal = () => {
+  //   localStorage.setItem("todoItems", JSON.stringify(todoItems));
+  // };
 
-  const getLocalToDo = () => {
-    if (localStorage.getItem("todoItems") === null) {
-      localStorage.setItem("todoItems", JSON.stringify([]));
-    } else {
-      let todoLocal = JSON.parse(localStorage.getItem("todoItems"));
-      setToDoItems(todoLocal);
-    }
-  };
+  // const getLocalToDo = () => {
+  //   if (localStorage.getItem("todoItems") === null) {
+  //     localStorage.setItem("todoItems", JSON.stringify([todoItems]));
+  //   } else {
+  //     let todoLocal = JSON.parse(localStorage.getItem("todoItems"));
+  //     setToDoItems(todoLocal);
+  //   }
+  // };
 
   return (
     <div className="App">
