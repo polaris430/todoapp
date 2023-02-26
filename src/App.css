@@ -46,12 +46,13 @@ body {
   width: 100px;
   height: 30px;
   border-radius: 10px;
+  border: 1px solid black;
 }
 
 .dropdown {
   text-align: center;
   border-radius: 10px;
-  border: 1px solid;
+  border: 1px solid black;
   height: 30px;
 }
 
